@@ -11,6 +11,16 @@ async function connectToDatabase() {
 }
 
 export default async function handler(req, res) {
+  // ✅ Set CORS headers
+  res.setHeader("Access-Control-Allow-Origin", "*"); // Or use "http://localhost:3000"
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  // ✅ Handle preflight OPTIONS request
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
+
   if (req.method === "GET") {
     return res.status(200).send("OK");
   }
