@@ -1,19 +1,16 @@
 {
-  "name": "backend",
+  "name": "vercel-backend",
   "version": "1.0.0",
-  "main": "index.js",
- "scripts": {
-  "start": "node index.js"
-},
+  "main": "api/send_mail.js",
+  "scripts": {
+    "dev": "vercel dev"
+  },
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Serverless backend deployed on Vercel",
   "dependencies": {
-    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0",
     "mongoose": "^8.15.2",
-    "nodemailer": "^7.0.3",
-    "nodemon": "^3.1.10"
+    "nodemailer": "^7.0.3"
   }
 }

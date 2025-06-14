@@ -14,12 +14,11 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log("MongoDB connection error:", err));
 
-// Health Check Route
+
 app.get("/health", (req, res) => {
   res.status(200).send("OK");
 });
 
-// Main route to handle mail and user storage
 app.post("/send_mail", async (req, res) => {
   const { Name, email, contact, interestedArea } = req.body;
   console.log(req.body);
